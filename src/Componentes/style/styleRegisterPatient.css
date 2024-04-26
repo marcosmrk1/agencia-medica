@@ -1,0 +1,8 @@
+@keyframes appear {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+.animated-message {
+    width: 100%;
+    animation: appear 0.5s ease-in-out;
+}
