@@ -72,6 +72,7 @@ const MainPage = () => {
                     />
                 }
                 <PatientQueue
+                    patientQueue={patientQueue}
                     arrayInfopatient={arrayInfopatient}
                     setArrayInfoPatient={setArrayInfoPatient}
                 />

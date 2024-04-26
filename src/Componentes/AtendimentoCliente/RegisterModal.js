@@ -36,7 +36,7 @@ const RegisterModal = ({
         });
         return handlingError;
     }
-    
+
 
     const sendData = () => {
         if (!validationFields()) {
