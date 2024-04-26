@@ -6,16 +6,10 @@ import React, { useState } from 'react';
 
 const PatientQueue = ({
     arrayInfopatient,
-    setArrayInfoPatient,
-    patientQueue
 }) => {
     const [filteredList, setFilteredList] = useState()
 
     const estilosDasLabel = { fontSize: '10px', fontWeight: 'bold', marginTop: '3px', textOverflow: 'ellipsis', overflow: 'hidden', whiteSpace: 'nowrap' }
-    const excluirPatient = (res) => {
-        const newArray = arrayInfopatient.filter(el => el.id !== res.id)
-        setArrayInfoPatient(newArray);
-    }
     const search = (e) => {
         const digitado = e.target.value
 
@@ -55,9 +49,7 @@ const PatientQueue = ({
                                         <Avatar alt={patient.patientname} sx={{ marginTop: '10px' }} />
                                         <Box sx={{ marginLeft: '10px' }} >
                                             <Typography>Informação do paciente
-                                                <IconButton onClick={() => excluirPatient(patient)} aria-label="delete" color='error'>
-                                                    <DeleteIcon />
-                                                </IconButton>
+                                         
                                             </Typography>
                                             <Typography sx={estilosDasLabel}>Nome: {patient.patientname}</Typography>
                                             <Typography sx={estilosDasLabel}>especialidade medica: {patient.medicalSpecialty} </Typography>
@@ -75,13 +67,11 @@ const PatientQueue = ({
                                         <Avatar alt={patient.patientname} sx={{ marginTop: '10px' }} />
                                         <Box sx={{ marginLeft: '10px' }} >
                                             <Typography>Informação do paciente
-                                                <IconButton onClick={() => excluirPatient(patient)} aria-label="delete" color='error'>
-                                                    <DeleteIcon />
-                                                </IconButton>
+                                              
                                             </Typography>
                                             <Typography sx={estilosDasLabel}>Nome: {patient.patientname}</Typography>
                                             <Typography sx={estilosDasLabel}>especialidade medica: {patient.medicalSpecialty} </Typography>
-                                            <Typography sx={estilosDasLabel}>Ordem: {patient.order}</Typography>
+                                            <Typography sx={estilosDasLabel}>Ordem de espera : {patient.order}</Typography>
 
                                         </Box>
 
