@@ -3,8 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { styleCard, styleTextHeader, } from '../../Utils/UtilsStyle';
 import RegisterModal from './RegisterModal';
 import PatientQueue from './PatientQueue';
-import PersonAddAltIcon from '@mui/icons-material/PersonAddAlt';
+import PersonAddIcon from '@mui/icons-material/PersonAdd';
 import MoveModalQueue from './MoveModalQueue';
+import PersonRemoveIcon from '@mui/icons-material/PersonRemove';
 const MainPage = () => {
     const [openModalRegisterPatient, setOpenModalRegisterPatient] = useState(false)
     const [arrayInfopatient, setArrayInfoPatient] = useState([])
@@ -42,11 +43,11 @@ const MainPage = () => {
 
                         <Box sx={{ gap: '10px', display: 'flex' }}>
 
-                            <Button variant="contained" onClick={() => handleClickForOpenModal()}>
+                            <Button variant="contained" endIcon={<PersonAddIcon />} onClick={() => handleClickForOpenModal()}>
                                 Cadastrar paciente
                             </Button>
                             {arrayInfopatient?.length !== 0 && arrayInfopatient !== '' &&
-                                <Button variant="contained" endIcon={<PersonAddAltIcon />} onClick={handleClickForOpenModalMoveQueue}>
+                                <Button variant="contained" endIcon={<PersonRemoveIcon />} onClick={handleClickForOpenModalMoveQueue}>
                                     Próximo da fila
                                 </Button>
                             }
